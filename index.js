@@ -35,8 +35,14 @@ app.post("/quotes", async (req, res) => {
   res.redirect("/quotes");
 });
 
+app.delete("/quotes/:id", async (req, res) => {
+  const { id } = req.params;
+  await Quote.findByIdAndDelete(id);
+  res.redirect("/quotes");
+});
+
 app.get("/quotes/:id", async (req, res) => {
-  const { id } = await req.params;
+  const { id } = req.params;
   const quote = await Quote.findById(id);
   res.render("quotes/show", { quote });
 });
