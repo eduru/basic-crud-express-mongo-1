@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
-const Quote = require("./models/quotes");
-
-mongoose.connect("mongodb://localhost:27017/expressDemo2");
+const Comment = require("./models/quotes");
+mongoose.connect("mongodb://localhost:27017/LOTRquotes");
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error"));
 db.once("open", () => {
@@ -38,16 +37,12 @@ const seedQuotes = [
       "There's some good in this world, Mr. Frodo, and it's worth fighting for.",
   },
   {
-    author: "I will take the Ring, though I do not know the way.",
+    author: "Frodo",
+    quote: "I will take the Ring, though I do not know the way.",
   },
   { author: "Boromir", quote: "One does not simply walk into Mordor." },
 ];
 
-Quote.insertMany(seedQuotes)
+Comment.insertMany(seedQuotes)
   .then((res) => console.log(res))
   .catch((err) => console.log(err));
-
-const seedQu = [
-  { username: "trancos", quote: "cuenta con mi espada" },
-  { username: "trancos", quote: "cuenta con mi espada" },
-];

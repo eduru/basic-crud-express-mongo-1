@@ -19,6 +19,11 @@ app.use(express.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
+app.get("/quotes", async (req, res) => {
+  const quotes = await Quote.find({});
+  res.render("quotes/index", { quotes });
+});
+
 app.listen(3000, () => {
   console.log("Server listening on port 3000");
 });
