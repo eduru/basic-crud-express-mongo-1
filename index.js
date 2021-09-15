@@ -25,6 +25,12 @@ app.get("/quotes", async (req, res) => {
   res.render("quotes/index", { quotes });
 });
 
+app.get("/quotes/:id", async (req, res) => {
+  const { id } = req.params;
+  const quote = await Quote.findById(id);
+  res.render("quotes/show", { quote });
+});
+
 app.get("/quotes/new", async (req, res) => {
   res.render("quotes/new");
 });
@@ -35,16 +41,19 @@ app.post("/quotes", async (req, res) => {
   res.redirect("/quotes");
 });
 
+app.patch("/quotes/:id", async (req, res) => {
+  const { id } = req.params;
+  await Quote.findByIdAndUpdate(id, req.body, {
+    runValidators: true,
+    new: true,
+  });
+  res.redirect("/quotes");
+});
+
 app.delete("/quotes/:id", async (req, res) => {
   const { id } = req.params;
   await Quote.findByIdAndDelete(id);
   res.redirect("/quotes");
-});
-
-app.get("/quotes/:id", async (req, res) => {
-  const { id } = req.params;
-  const quote = await Quote.findById(id);
-  res.render("quotes/show", { quote });
 });
 
 app.listen(3000, () => {
