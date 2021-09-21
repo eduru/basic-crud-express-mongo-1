@@ -8,5 +8,13 @@
 </head>
 <body>
     <h1>Edit the quote:</h1>
+    <form action="/quotes/<%= quote._id %>?_method=PATCH " method="POST">
+        <label for="quote">Quote: </label>
+        <br>
+        <textarea name="quote" id="quote" cols="30" rows="10"><%=quote.quote %> </textarea>
+        <br>
+        <button>Save</button>
+    </form>
+    <a href="/quotes/<%=quote._id %>">Cancel</a>
 </body>
 </html>

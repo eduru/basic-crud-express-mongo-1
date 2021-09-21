@@ -9,7 +9,7 @@
 <body>
     <h1><%= quote.quote  %> </h1>
     <h2><%= quote.author %></h2>
-    <a href="/quote/<%= quote._id %>/edit ">Edit</a>
+    <a href="/quotes/<%=quote._id %>/edit ">Edit</a>
     <form action="/quotes/<%= quote._id %>?_method=DELETE " method="POST">
         <button>DELETE</button>
     </form>
