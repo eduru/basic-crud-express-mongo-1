@@ -5,11 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
     <title>Quotes</title>
 </head>
 
 <body>
-    <h1>All quotes</h1>
+    <div id="top-bar">
+        <h1>LOTR QUOTES</h1>
+    </div>
+    <h2>All quotes</h2>
+    <div class="quotes-container">
     <ul>
         <% for(let q of quotes){ %>
             <li>
@@ -22,6 +30,7 @@
             </li>
             <% } %>
     </ul>
+    </div>
     <a href="/quotes/new">Add quote</a>
 </body>
 

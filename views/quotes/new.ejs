@@ -4,11 +4,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
     <title>Add quote</title>
 </head>
 <body>
-    <h1>Add a quote:</h1>
-    <form action="/quotes" method="POST">
+    <div id="top-bar">
+        <h1>LOTR QUOTES</h1>
+    </div>
+    <h2>Add a quote:</h2>
+   
+    <form class="quotes-container" action="/quotes" method="POST">
         <section>
             <label for="author">Author:</label>
             <input type="text" id="author" name="author">
