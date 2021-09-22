@@ -10,3 +10,5 @@ To install all the dependencies
 
 - Run your MongoDB server.
 - nodemon index.js to load the app in your localhost.
+
+![](demo.gif)
